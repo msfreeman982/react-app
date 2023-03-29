@@ -70,13 +70,13 @@ const MarvelUniverse = () => {
   return (
     <>
       <div className={'main'}>
-        <div className={'main__heroDescriptionContainer'}>
+        <div aria-label="desc" className={'main__heroDescriptionContainer'}>
           {activeHeroData ? <HeroDescription hero={activeHeroData}/> : <h2>Choose hero</h2>}
         </div>
         <div>
           <h2>Marvel Heroes</h2>
           {renderHeroes()}
-          <button className={'main__buttonMore'} onClick={() => setOffset(offset +20)}>Show more</button>
+          <button aria-label="btn" className={'main__buttonMore'} onClick={() => setOffset(offset +20)}>Show more</button>
         </div>
       </div>
       {showLoader && <Loader visibility={isLoading}/>}
