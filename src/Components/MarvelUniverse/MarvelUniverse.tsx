@@ -1,3 +1,4 @@
+import React from "react";
 import useApi from "../../api/useApi";
 import {useEffect, useState} from "react";
 import HeroCard from "./HeroCard/HeroCard";
@@ -70,13 +71,13 @@ const MarvelUniverse = () => {
   return (
     <>
       <div className={'main'}>
-        <div aria-label="desc" className={'main__heroDescriptionContainer'}>
+        <div className={'main__heroDescriptionContainer'}>
           {activeHeroData ? <HeroDescription hero={activeHeroData}/> : <h2>Choose hero</h2>}
         </div>
         <div>
           <h2>Marvel Heroes</h2>
           {renderHeroes()}
-          <button aria-label="btn" className={'main__buttonMore'} onClick={() => setOffset(offset +20)}>Show more</button>
+          <button className={'main__buttonMore'} onClick={() => setOffset(offset +20)}>Show more</button>
         </div>
       </div>
       {showLoader && <Loader visibility={isLoading}/>}

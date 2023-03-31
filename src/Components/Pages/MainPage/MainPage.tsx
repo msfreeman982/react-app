@@ -1,4 +1,5 @@
-import styles from './MainPage.module.scss';
+import React from "react";
+import './MainPage.module.scss';
 import MarvelUniverse from "../../MarvelUniverse/MarvelUniverse";
 const MainPage = () => {
   return (

@@ -1,3 +1,4 @@
+import React from "react";
 import './HeroDescription.scss'
 
 const HeroDescription = ({hero}: any) => {
