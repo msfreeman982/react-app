@@ -4,7 +4,7 @@ import MarvelUniverse from "../../Components/MarvelUniverse/MarvelUniverse"
 import {act} from '@testing-library/react';
 
 let wrapper:any;
-it("renders items", async () => {
+it("snapshot", async () => {
     await act(async () => {
         wrapper = await renderer.create(<MarvelUniverse />);
     });
