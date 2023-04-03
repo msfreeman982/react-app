@@ -4,7 +4,7 @@ beforeEach(() => {
     fetchMock.resetMocks();
 });
 
-test('throws an error if empty object', () => {
+test('fetch', () => {
     fetchMock.mockResponseOnce(JSON.stringify([{ id: 1 }]));
 
     const onResponse = jest.fn( () => {
@@ -17,18 +17,3 @@ test('throws an error if empty object', () => {
 });
 
 
-// test('returns result if array', () => {
-//     fetch.mockResponseOnce(JSON.stringify([{ id: 1 }]));
-//     const onResponse = jest.fn();
-//     const onError = jest.fn();
-//     const api = useApi.getCharacter<any>;
-//     return api()
-//         .then(onResponse)
-//         .catch(onError)
-//         .finally(() => {
-//             expect(onResponse).toHaveBeenCalled();
-//             expect(onError).not.toHaveBeenCalled();
-//
-//             expect(onResponse.mock.calls[0][0][0]).toEqual({ id: 1 });
-//         });
-// });
