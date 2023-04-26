@@ -1,0 +1,19 @@
+.loader {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  opacity: 1;
+  transition: 0.5s ease all;
+  z-index: 10;
+  background-color: #0c0c0c;
+
+  &_hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
