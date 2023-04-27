@@ -1,5 +1,39 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`renders correctly 1`] = `
+Array [
+  <div
+    className="main"
+  >
+    <div
+      className="main__heroDescriptionContainer"
+    >
+      <h2>
+        Choose hero
+      </h2>
+    </div>
+    <div>
+      <h2>
+        Marvel Heroes
+      </h2>
+      <button
+        className="main__buttonMore"
+        onClick={[Function]}
+      >
+        Show more
+      </button>
+    </div>
+  </div>,
+  <div
+    className="loader "
+  >
+    <svg>
+      marvel-logo.svg
+    </svg>
+  </div>,
+]
+`;
+
 exports[`renders items 1`] = `
 Array [
   <div

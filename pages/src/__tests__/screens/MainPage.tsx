@@ -1,8 +1,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import MarvelUniverse from '../../Components/MarvelUniverse/MarvelUniverse';
+import MainPage from '../../Components/Pages/MainPage/MainPage';
 
 it('renders correctly', () => {
-    const tree = renderer.create(<MarvelUniverse />).toJSON();
+    const tree = renderer.create(<MainPage />).toJSON();
     expect(tree).toMatchSnapshot();
 });

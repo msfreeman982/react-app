@@ -65,9 +65,6 @@ const MarvelUniverse = () => {
     return null;
   }
 
-
-
-
   return (
     <>
       <div className={'main'}>

@@ -1,19 +1,52 @@
-import fetchMock from 'jest-fetch-mock';
+import {renderHook} from '@testing-library/react';
+import useApi from '../api/useApi';
 
-beforeEach(() => {
-    fetchMock.resetMocks();
+const mockCharacters = {
+    data: {
+        results: [
+            { id: 1, name: 'Iron Man' },
+            { id: 2, name: 'Captain America' },
+            { id: 3, name: 'Thor' },
+        ],
+    },
+};
+
+const mockCharacter = {
+    data: {
+        results: [{ id: 1, name: 'Iron Man' }],
+    },
+};
+
+describe('useApi', () => {
+    beforeEach(() => {
+        global.fetch = jest.fn();
+    });
+
+    afterEach(() => {
+        (global.fetch as jest.Mock).mockClear();
+        delete global.fetch;
+    });
+
+    it('should fetch characters from the API', async () => {
+        (global.fetch as jest.Mock).mockResolvedValueOnce({
+            json: async () => mockCharacters,
+        });
+
+        const { result } = renderHook(() => useApi());
+        const characters = await result.current.getCharacters();
+
+        expect(characters.data.results).toEqual(mockCharacters.data.results);
+    });
+
+
+    it('should fetch a character from the API', async () => {
+        (global.fetch as jest.Mock).mockResolvedValueOnce({
+            json: async () => mockCharacters,
+        });
+
+        const { result } = renderHook(() => useApi());
+        const characters = await result.current.getCharacters();
+
+        expect(characters.data.results[0]).toEqual(mockCharacter.data.results[0]);
+    });
 });
-
-test('fetch', () => {
-    fetchMock.mockResponseOnce(JSON.stringify([{ id: 1 }]));
-
-    const onResponse = jest.fn( () => {
-        return fetchMock(`https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=b654ca88e860833a320a418837b8c8d7&hash=1e38e95972e560a073674d6102216c0b`)
-            .then(response => response.json())
-            .finally(() => {
-                expect(onResponse).toHaveBeenCalledTimes(0);
-            })
-    })
-});
-
-
