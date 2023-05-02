@@ -1,0 +1,120 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 150px 0;
+    width: 100%;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.progressbar {
+    width: 715px;
+    counter-reset: step;
+    z-index: 1;
+    padding: 0;
+}
+
+.progressbar li {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 24%;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.progressbar li span {
+    display: inline-block;
+    max-width: 115px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+
+.progressbar li:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 30px;
+    height: 30px;
+    border: 2px solid transparent;
+    display: block;
+    margin: 0 auto 10px auto;
+    border-radius: 50%;
+    line-height: 27px;
+    background: #E5E5E5;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+.progressbar li:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: #E5E5E5;
+    top: 15px;
+    left: -50%;
+    z-index: -1;
+}
+
+.progressbar li:first-child:after {
+    content: none;
+}
+
+.progressbar li.active:before,
+.progressbar li.completed:before {
+    border-color: #9B9B9B;
+    background: #9B9B9B;
+    color: white;
+}
+
+.progressbar li.active + li:before {
+    border-color: #9B9B9B;
+    background: #9B9B9B;
+    color: white;
+}
+
+.progressbar li.active:after,
+.progressbar li.completed:after {
+    background: #9B9B9B;
+}
+
+.substeps {
+    position: absolute;
+    width: 100%;
+    margin: 21px 0 0 110px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    height: 100%;
+}
+
+.substeps-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+}
+
+.slider-handle {
+    width: 17px;
+    height: 4px;
+    margin: 7px 2px;
+    background-color: #E5E5E5;
+    border-radius: 8px;
+}
+
+.progressbar li.active .slider-handle,
+.progressbar li.completed .slider-handle {
+    background-color: #9B9B9B;
+}
+
+
