@@ -2,6 +2,7 @@ import React from "react";
 import './MainPage.module.scss';
 import MarvelUniverse from "../../MarvelUniverse/MarvelUniverse";
 import ProgressIndicator from "../../ProgressIndicator/ProgressIndicator";
+import FormikForm from "../../PersonalDataForm/PersonalDataForm";
 
 
 const steps = [
@@ -31,6 +32,7 @@ const steps = [
 const MainPage = () => {
   return (
     <div>
+      <FormikForm />
       <ProgressIndicator steps={steps} />
       <MarvelUniverse/>
     </div>

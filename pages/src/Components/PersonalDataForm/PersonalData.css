@@ -1,0 +1,131 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    margin-bottom: 7px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #000000;
+}
+
+label[for="lastName"]:after,
+label[for="option"]:after {
+    display: inline-block;
+    content: "\24D8";
+    font-size: 18px;
+    color: #787878;
+    margin-left: 10px;
+}
+
+.form-group input[type="text"] {
+    padding-left: 18px;
+    color: #000000;
+}
+
+.form-control {
+    width: 418px;
+    height: 40px;
+    font-weight: 400;
+    font-size: 14px!important;
+    line-height: 20px;
+    color: #898989;
+}
+
+input::placeholder {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #898989;
+}
+
+input[name="phoneCode"]::placeholder {
+    color: #000000;
+}
+
+.form-group input[type="text"],
+.form-group select {
+    border: 1px solid #b0b0b0b0;
+    border-radius: 10px;
+    background-color: #ffffff;
+    font-size: 1rem;
+}
+
+select {
+    padding-left: 18px;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="number"]:focus,
+.form-group select:focus {
+    outline: none;
+    box-shadow: 0 0 2px 2px #d2d2d2;
+}
+
+.date-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.date-inputs {
+    display: flex;
+    gap: 5px;
+}
+
+.form-group select[name="day"],
+.form-group select[name="month"],
+.form-group select[name="year"] {
+    width: 133px;
+}
+
+.form-group input[name="phoneCode"] {
+    width: 54px;
+    color: #000000;
+    background: #F0F0F0;
+}
+
+.form-group input[name="phoneNumber"] {
+    width: 302px;
+}
+
+/*select {*/
+/*    -webkit-appearance: none;*/
+/*    -moz-appearance: none;*/
+/*    appearance: none;*/
+/*    background-color: transparent;*/
+/*    background-position: right center;*/
+/*    background-repeat: no-repeat;*/
+/*    padding-right: 20px;*/
+/*    border: 1px solid #ccc;*/
+/*    border-radius: 5px;*/
+/*    font-size: 16px;*/
+/*    content: "\2713";*/
+/*}*/
+
+/*select option {*/
+/*    font-size: 30px;*/
+/*}*/
+
+/*select option:checked::before {*/
+/*    content: "\2713";*/
+/*    font-size: 14px;*/
+/*    color: #000000;*/
+/*    background-color: #007bff;*/
+/*    padding: 2px 5px;*/
+/*    margin-right: 10px;*/
+/*    border-radius: 3px;*/
+/*}*/
+
+/*select option:not(:checked)::before {*/
+/*    content: "";*/
+/*}*/
+
