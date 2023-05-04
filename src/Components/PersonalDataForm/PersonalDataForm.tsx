@@ -1,7 +1,7 @@
 import React from 'react';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
-import './PersonalData.css';
+import './PersonalDataForm.css';
 
 const phoneRegExp = /^\d{3}-\d{3}-\d{4}$/;
 
@@ -53,14 +53,16 @@ const FormikForm = () => {
                         </div>
                         <div className="form-group">
                             <label htmlFor="option">Dropdown label*</label>
-                            <Field className="form-control" name="option" as="select" placeholder="Please complete">
-                                <option value="">Please complete</option>
-                                <option value="option1">Option 1</option>
-                                <option value="option2">Option 2</option>
-                                <option value="option3">Option 3</option>
-                                <option value="option4">Option 4</option>
-                            </Field>
-                            {errors.option && touched.option ? <div>{errors.option}</div> : null}
+                            <div className="select-container">
+                                <Field className="form-control" name="option" as="select" placeholder="Please complete">
+                                    <option value="">Please complete</option>
+                                    <option value="option1">Option 1</option>
+                                    <option value="option2">Option 2</option>
+                                    <option value="option3">Option 3</option>
+                                    <option value="option4">Option 4</option>
+                                </Field>
+                                {errors.option && touched.option ? <div>{errors.option}</div> : null}
+                            </div>
                         </div>
                         <div className="form-group date-group">
                             <label>Datepicker label*</label>

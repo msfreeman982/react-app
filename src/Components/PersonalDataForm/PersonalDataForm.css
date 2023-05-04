@@ -36,7 +36,7 @@ label[for="option"]:after {
     width: 418px;
     height: 40px;
     font-weight: 400;
-    font-size: 14px!important;
+    font-size: 14px !important;
     line-height: 20px;
     color: #898989;
 }
@@ -97,35 +97,45 @@ select {
     width: 302px;
 }
 
-/*select {*/
-/*    -webkit-appearance: none;*/
-/*    -moz-appearance: none;*/
-/*    appearance: none;*/
-/*    background-color: transparent;*/
-/*    background-position: right center;*/
-/*    background-repeat: no-repeat;*/
-/*    padding-right: 20px;*/
-/*    border: 1px solid #ccc;*/
-/*    border-radius: 5px;*/
-/*    font-size: 16px;*/
-/*    content: "\2713";*/
-/*}*/
 
-/*select option {*/
-/*    font-size: 30px;*/
-/*}*/
+.select-container select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /*background-color: palevioletred;*/
+    /*border: 1px solid #cccccc;*/
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: normal;
+    /*border-radius: 4px;*/
+    position: relative;
+}
 
-/*select option:checked::before {*/
-/*    content: "\2713";*/
-/*    font-size: 14px;*/
-/*    color: #000000;*/
-/*    background-color: #007bff;*/
-/*    padding: 2px 5px;*/
-/*    margin-right: 10px;*/
-/*    border-radius: 3px;*/
-/*}*/
+.select-container select option {
+    color: #000000;
+}
 
-/*select option:not(:checked)::before {*/
-/*    content: "";*/
-/*}*/
+.select-container::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #cccccc;
+    background-color: yellowgreen;
+    border-radius: 2px;
+    pointer-events: none;
+}
 
+.select-container select:checked ~::after {
+    content: "\2713";
+    text-align: center;
+    font-size: 12px;
+    color: #007bff;
+    background-color: #cccccc;
+    border: 1px solid #007bff;
+    border-radius: 2px;
+}
